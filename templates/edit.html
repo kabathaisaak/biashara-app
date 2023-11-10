@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>Update Information</h1>
-<form method="POST" action="/update/{{ product.id }}" class="p-5">
+<form method="POST" action="/update/{{ product.id }}" class="p-5 bg-success">
    {% csrf_token %}
     <label for="name" class="form-label">product name</label>
     <input type="text" id="name" name="name" value="{{ product.name }}" class="form-control">
@@ -22,6 +22,19 @@
 
      <label for="description" class="form-label">description</label>
     <input type="text" id="description" name="description" value="{{ product.description }}" class="form-control">
+
+
+     <label for="origin" class="form-label">origin</label>
+    <input type="text" id="origin" name="origin" value="{{ product.origin }}" class="form-control">
+
+
+     <label for="color" class="form-label">color</label>
+    <select name="color" id="color">
+        <option selected>{{ product.color }}</option>
+        <option value="brown">brown</option>
+        <option value="black">black</option>
+    </select>
+
     <br><br>
 
     <button type="submit" class="btn btn-primary">update</button>

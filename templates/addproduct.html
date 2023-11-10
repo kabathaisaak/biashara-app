@@ -12,10 +12,10 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </head>
 <body>
-<h1 class="text-center">Add products</h1>
-<form method="post" action="/add/">
+<h1 class="text-center text-primary">Add products</h1>
+<form method="post" action="/add/" class="bg-info" >
     {% csrf_token %}
-    <div class="row mb-3">
+    <div class="row mb-3 ">
         <div class="col">
             <label for="name">Name :</label>
         </div>
@@ -40,6 +40,26 @@
         </div>
         <div class="col">
         {{ form.description }}
+    </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="origin">origin :</label>
+        </div>
+        <div class="col">
+        {{ form.origin }}
+    </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="color">color :</label>
+        </div>
+        <div class="col">
+            <select name="color" id="color">
+                <option value="" disabled selected>select color</option>
+                <option value="brown">brown</option>
+                <option value="black">black</option>
+            </select>
     </div>
     </div>
 
